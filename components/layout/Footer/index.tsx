@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { menuLinksLanding } from '@/data/menuLinks';
-import { SOCIALS } from '@/components/Landing/Sections/Data';
+import { SOCIALS } from '@/components/Landingv2/Sections/Data';
 
 export const FooterLanding = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');

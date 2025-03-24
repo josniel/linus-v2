@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Button from '@/components/UI/Button';
-
+import { useCart } from '@/hooks/useCart';
 interface Product {
   id: number;
   image: string;
@@ -14,6 +14,12 @@ interface CardProps {
 }
 
 const Card = ({ product }: CardProps) => {
+  const { addToCart } = useCart();
+
+  const handleCartClick = async () => {
+    // await addToCart(product, 1);
+  };
+
   return (
     <div className="flex items-center flex-col gap-3">
       <div className="flex flex-col gap-3 items-center py-2 px-2 rounded-[10px] justify-between bg-white bg-opacity-40 border-[1.5px] border-[rgba(108,75,180,0.15)]">
@@ -82,6 +88,7 @@ const Card = ({ product }: CardProps) => {
         <Button
           className="group-hover:-translate-x-2 group-hover:-translate-y-2 transition-all"
           variant="primary"
+          onClick={handleCartClick}
         >
           Add to Cart
         </Button>

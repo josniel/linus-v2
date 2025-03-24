@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState, Fragment, useMemo } from 'react';
+import { useRef, useState, Fragment, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import Button from '@/components/UI/Button';
 import Card from './Card';
@@ -7,45 +7,8 @@ import CardSkeleton from './CardSkeleton';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import { Product } from '@/components/Store/Sections/TopSellers/types';
-
-const query = gql`
-  query GetProducts($first: Int!, $after: String) {
-    products(first: $first, after: $after) {
-      pageInfo {
-        hasNextPage
-        endCursor
-        startCursor
-        hasPreviousPage
-      }
-      edges {
-        node {
-          id
-          title
-          description
-          handle
-          images(first: 1) {
-            edges {
-              node {
-                src
-                altText
-              }
-            }
-          }
-          priceRange {
-            maxVariantPrice {
-              amount
-              currencyCode
-            }
-            minVariantPrice {
-              amount
-              currencyCode
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+import { useTopSellers } from '@/hooks/useTopSellers';
+import { useCart } from '@/hooks/useCart';
 
 const TopSellers = ({
   className = '',
@@ -54,47 +17,18 @@ const TopSellers = ({
   className?: string;
   id?: string;
 }) => {
-  const [cursor, setCursor] = useState<string | null>(null);
-  const [direction, setDirection] = useState<'next' | 'prev'>('next');
-  const cursorStack = useRef<string[]>([]);
-
+  const { addToCart } = useCart();
   const {
     loading: shopLoading,
     error: shopError,
     data: shopData,
-    fetchMore,
-  } = useQuery(query, {
-    variables: {
-      first: direction === 'next' ? 4 : undefined,
-      after: direction === 'next' ? cursor : undefined,
-      last: direction === 'prev' ? 4 : undefined,
-      before: direction === 'prev' ? cursor : undefined,
-    },
-  });
+    handleNext,
+    handleBack,
+  } = useTopSellers();
 
   if (shopError) {
     console.error('GraphQL Error:', shopError);
   }
-
-  const handleBack = () => {
-    if (cursorStack.current.length > 0) {
-      const prevCursor = cursorStack.current.pop();
-      setCursor(prevCursor || null);
-      setDirection('prev');
-    }
-  };
-
-  const handleNext = () => {
-    const pageInfo = shopData?.products?.pageInfo;
-    if (pageInfo?.hasNextPage) {
-      const nextCursor = pageInfo.endCursor;
-      if (nextCursor) {
-        cursorStack.current.push(cursor!); // Guarda el cursor actual
-        setCursor(nextCursor);
-        setDirection('next');
-      }
-    }
-  };
 
   console.log('shopData', shopData?.products?.edges);
   return (

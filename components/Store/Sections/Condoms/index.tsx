@@ -5,6 +5,7 @@ import { Bebas_Neue } from 'next/font/google';
 import MiniBanner from '@/components/MiniBanner';
 import Button from '@/components/UI/Button';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import { useCart } from '@/hooks/useCart';
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -19,7 +20,12 @@ const Condoms = ({
   className?: string;
   id?: string;
 }) => {
+  const { addToCart } = useCart();
   const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+  const handleCartClick = async () => {
+    // await addToCart(product, 1);
+  };
   return (
     <div
       className={`w-full relative mt-[550px] lg:pt-[60px] [background:radial-gradient(56.65%_255.63%_at_71%_161.25%,_#42A4EB_0%,_#0B0541_100%)] ${className}`}
@@ -111,6 +117,7 @@ const Condoms = ({
             <Button
               variant="primary"
               className="group-hover:-translate-x-2 group-hover:-translate-y-2 max-lg:px-7 transition-all whitespace-nowrap"
+              onClick={handleCartClick}
             >
               Add to Cart
             </Button>

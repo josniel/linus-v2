@@ -1,12 +1,19 @@
 import Image from 'next/image';
 import Button from '@/components/UI/Button';
 import { Product } from '@/components/Store/Sections/TopSellers/types';
+import { useCart } from '@/hooks/useCart';
 
 interface CardProps {
   product: Product;
 }
 
 const Card = ({ product }: CardProps) => {
+  const { addToCart } = useCart();
+
+  const handleCartClick = async () => {
+    // await addToCart(product, 1);
+  };
+
   return (
     <div className="border-[3px] border-black flex flex-col gap-3 items-center py-2 px-2 rounded-[10px] justify-between bg-white">
       <div className="flex flex-col gap-2">
@@ -37,6 +44,7 @@ const Card = ({ product }: CardProps) => {
           <Button
             variant="secondary"
             className="group-hover:-translate-x-2 group-hover:-translate-y-2 transition-all"
+            onClick={handleCartClick}
           >
             Add to Cart
           </Button>

@@ -28,6 +28,23 @@ const Clothes = ({
   className?: string;
   id?: string;
 }) => {
+  const [zoomActive, setZoomActive] = useState(false);
+  const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
+  const imageRef = useRef<HTMLImageElement | null>(null);
+
+  const handleToggleZoom = () => {
+    setZoomActive((prev) => !prev);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!zoomActive || !imageRef.current) return;
+
+    const rect = imageRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    setZoomPosition({ x, y });
+  };
   return (
     <div
       className={`w-full relative !h-[960px] bg-picton-blue-400 flex items-center flex-col gap-7 py-4 mb-80 ${className}`}
@@ -61,21 +78,48 @@ const Clothes = ({
             </div>
           </div>
           <div className="flex items-center flex-col gap-3">
-            <div className="rounded-[20px] bg-[#F0F0F0] [filter:drop-shadow(77.636px_25.245px_21.904px_rgba(48,_90,_155,_0.20))] overflow-hidden">
+            <div
+              className="rounded-[20px] bg-[#F0F0F0] [filter:drop-shadow(77.636px_25.245px_21.904px_rgba(48,_90,_155,_0.20))] overflow-hidden"
+              onMouseMove={handleMouseMove}
+            >
               <Image
+                ref={imageRef}
                 src={'/static/images/store/clothes/t-shirt3.png'}
                 alt="t-shirt3"
                 width={872}
                 height={827}
                 quality={100}
-                className="w-[672px] "
+                className="w-[672px] select-none"
+                draggable={false}
               ></Image>
+              {/* Lupa */}
+              {zoomActive && (
+                <div
+                  className="absolute pointer-events-none border-[2px] border-picton-blue-500 shadow-lg overflow-hidden z-10"
+                  style={{
+                    width: 240,
+                    height: 240,
+                    top: zoomPosition.y - 120,
+                    left: zoomPosition.x - 120,
+                    backgroundImage: `url(/static/images/store/clothes/t-shirt3.png)`,
+                    backgroundSize: `500%`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: `${-zoomPosition.x * 1.8 + 120}px ${
+                      -zoomPosition.y * 1.8 + 120
+                    }px`,
+                    borderRadius: '1000px',
+                  }}
+                />
+              )}
             </div>
             <div className="bg-white bg-opacity-40 flex items-center gap-5 py-0.5 px-8 rounded-xl">
               <div className="__className_02ffdd text-white text-4xl cursor-pointer">
                 -
               </div>
-              <div className="icon-search-1 font-medium text-2xl text-white __className_02ffdd cursor-pointer"></div>
+              <div
+                className="icon-search-1 font-medium text-2xl text-white __className_02ffdd cursor-pointer"
+                onClick={handleToggleZoom}
+              ></div>
               <div className="__className_02ffdd text-white text-4xl cursor-pointer">
                 +
               </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Landing from '@/components/Landing';
+import Landing from '@/components/Landingv2';
 
 export const metadata: Metadata = {
   title: 'Linus App',

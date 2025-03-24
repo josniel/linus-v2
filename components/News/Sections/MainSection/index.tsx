@@ -13,12 +13,19 @@ const MainSection = ({
   const isDesktopLG = useMediaQuery('(min-width: 1024px)');
   return (
     <div
-      className={`absolute top-0 left-0 w-full !h-[100%] max-h-[780px] ${className} bg-cover bg-center z-[1]`}
-      style={{
-        backgroundImage: 'url(/static/images/news/main-section/background.png)',
-      }}
+      className={`absolute top-0 left-0 w-full !h-[100%] max-h-[780px] ${className} z-[1] bg-[#81d6ff]`}
       id={id}
     >
+      <Image
+        src={'/static/images/news/main-section/background.png'}
+        alt=""
+        layout="fill"
+        objectFit="cover"
+        placeholder="blur"
+        blurDataURL="/static/images/news/main-section/background-blur.jpg"
+        priority={true}
+        quality={100}
+      />
       <div className="flex items-center flex-col gap-11 container justify-center h-full relative">
         <div
           className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[32px] leading-none text-white tracking-[-4px] max-lg:tracking-[-1.2px] text-center ${

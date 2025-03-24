@@ -16,6 +16,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { Providers } from '@/app/providers';
 
 const bungee = Bungee({
   weight: '400',
@@ -57,9 +58,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className={`${bungee.className} ${dynaPuff.className} relative`}
       >
         <ApolloProvider client={client}>
-          <HeaderLanding />
-          {children}
-          <FooterLanding />
+          <Providers>
+            <HeaderLanding />
+            {children}
+            <FooterLanding />
+          </Providers>
         </ApolloProvider>
       </body>
     </html>
