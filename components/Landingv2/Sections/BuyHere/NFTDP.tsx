@@ -120,7 +120,7 @@ const NFTDP = () => {
   }, [isInView]);
   return (
     <div
-      className="absolute bottom-0 -right-2 max-xl:-right-16 w-[417px] max-2xl:w-[333.6px] h-[523px] max-2xl:h-[418.4px] group overflow-hidden max-md:hidden"
+      className="absolute bottom-0 -right-2 max-xl:-right-16 w-[417px] max-2xl:w-[333.6px] h-[523px] max-2xl:h-[418.4px] group overflow-hidden max-md:hidden 2xl:[clip-path:polygon(0%_88.24%,_23.05%_0%,_100%_0%,_100%_100%,_0%_100%)] max-2xl:[clip-path:polygon(0%_88.24%,_23.05%_0%,_100%_0%,_100%_100%,_0%_100%)]"
       ref={containerRef}
     >
       <Image

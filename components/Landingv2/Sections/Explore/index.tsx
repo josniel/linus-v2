@@ -121,7 +121,7 @@ const Explore = ({
           updates and the epic story behind our penguins. Watch, learn, and be
           part of this incredible adventure!
         </div>
-        <div className="border-[6px] rounded-[30px] border-black overflow-hidden w-[1000px] h-[685px] max-lg:w-[85%] relative max-lg:px-4 max-lg:pt-4 max-lg:pb-28 max-lg:bg-white flex items-center gap-4 flex-col">
+        <div className="border-[6px] rounded-[30px] border-black overflow-hidden w-[1000px] h-[685px] max-lg:w-[85%] relative max-lg:px-4 max-lg:pt-4 max-lg:pb-28 max-lg:bg-white flex items-center gap-4 flex-col group transition-all">
           {/* <Image
             src={'/static/images/landing/explore/explore.svg'}
             alt="explore"
@@ -130,7 +130,7 @@ const Explore = ({
             className="w-full h-full object-cover object-center rounded-[30px]"
           ></Image> */}
           <video
-            className="w-full h-full rounded-[24px] overflow-hidden"
+            className="w-full h-full rounded-[24px] object-cover object-top overflow-hidden"
             muted
             playsInline
             ref={videoRef}
@@ -138,6 +138,7 @@ const Explore = ({
             <source
               src={'/static/videos/main-video2.mp4'}
               type="video/mp4"
+              // className="w-full h-full object-cover object-center"
             ></source>
           </video>
           <div className="flex items-center justify-between gap-4 lg:hidden px-4 w-full">
@@ -167,10 +168,10 @@ const Explore = ({
             </div>
           </div>
           <div
-            className="rounded-full bg-black group w-[86px] h-[86px] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex items-center justify-center cursor-pointer max-lg:hidden"
+            className="rounded-full bg-black w-[86px] h-[86px] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex items-center justify-center cursor-pointer max-lg:hidden opacity-0 group-hover:opacity-100 transition-all"
             onClick={togglePlay}
           >
-            <div className="bg-[#D3C9FD] border border-[#D3C9FD] rounded-full flex items-center w-[87px] h-[87px] group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all">
+            <div className="bg-[#D3C9FD] border border-[#D3C9FD] rounded-full flex items-center w-[87px] h-[87px] hover:-translate-x-1 hover:-translate-y-1 transition-all">
               <span className="icon-filled-arrow text-black text-[44px] mx-auto"></span>
             </div>
           </div>

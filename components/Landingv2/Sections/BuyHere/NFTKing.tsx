@@ -89,7 +89,7 @@ const NFTKing = () => {
 
   return (
     <div
-      className="absolute bottom-0 -left-5 max-xl:-left-28 w-[435px] max-2xl:w-[348px] h-[607px] max-2xl:h-[485.6px] group max-md:hidden"
+      className="absolute bottom-0 -left-5 max-xl:-left-28 w-[435px] max-2xl:w-[348px] h-[607px] max-2xl:h-[485.6px] group max-md:hidden 2xl:[clip-path:polygon(0%_0%,_63.92%_0%,_100%_75.7%,_100%_100%,_0%_100%)] max-2xl:[clip-path:polygon(0%_0%,_68.92%_0%,_100%_75.7%,_100%_100%,_0%_100%)]"
       ref={containerRef}
     >
       <Image
