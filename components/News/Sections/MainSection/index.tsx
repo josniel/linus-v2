@@ -1,7 +1,4 @@
-'use client';
-import { useRef, useState, Fragment } from 'react';
 import Image from 'next/image';
-import useMediaQuery from '@/hooks/useMediaQuery';
 
 const MainSection = ({
   className = '',
@@ -10,7 +7,6 @@ const MainSection = ({
   className?: string;
   id?: string;
 }) => {
-  const isDesktopLG = useMediaQuery('(min-width: 1024px)');
   return (
     <div
       className={`absolute top-0 left-0 w-full !h-[100%] max-h-[780px] ${className} z-[1] bg-[#81d6ff]`}
@@ -19,8 +15,8 @@ const MainSection = ({
       <Image
         src={'/static/images/news/main-section/background.png'}
         alt=""
-        layout="fill"
-        objectFit="cover"
+        fill
+        className="object-cover"
         placeholder="blur"
         blurDataURL="/static/images/news/main-section/background-blur.jpg"
         priority={true}
@@ -28,11 +24,7 @@ const MainSection = ({
       />
       <div className="flex items-center flex-col gap-11 container justify-center h-full relative">
         <div
-          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[32px] leading-none text-white tracking-[-4px] max-lg:tracking-[-1.2px] text-center ${
-            isDesktopLG
-              ? '[text-shadow:_0px_7px_0px_#000] [-webkit-text-stroke-width:_7.07px]'
-              : '[text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_4.07px]'
-          }`}
+          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[32px] leading-none text-white tracking-[-4px] max-lg:tracking-[-1.2px] text-center lg:[text-shadow:_0px_7px_0px_#000] lg:[-webkit-text-stroke-width:_7.07px] [text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_4.07px]`}
         >
           Latest news of linus
         </div>

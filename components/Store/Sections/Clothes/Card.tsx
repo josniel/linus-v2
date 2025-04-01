@@ -53,8 +53,11 @@ const Card = ({ product }: CardProps) => {
                 Size:
               </div>
               <div className="flex items-center gap-1">
-                {product.sizes.map((size) => (
-                  <div className="text-black font-medium leading-none text-base">
+                {product.sizes.map((size, index) => (
+                  <div
+                    key={index}
+                    className="text-black font-medium leading-none text-base"
+                  >
                     {size}
                   </div>
                 ))}

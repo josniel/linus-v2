@@ -1,8 +1,5 @@
-'use client';
-import { useRef, useState, Fragment } from 'react';
 import Image from 'next/image';
 import { MAIN_BRANDS, BRANDS } from '@/components/Landingv2/Sections/Data';
-import useMediaQuery from '@/hooks/useMediaQuery';
 import NFTKing from './NFTKing';
 import NFTDP from './NFTDP';
 
@@ -13,7 +10,6 @@ const BuyHere = ({
   className?: string;
   id?: string;
 }) => {
-  const isDesktopLG = useMediaQuery('(min-width: 1024px)');
   const shortenString = (str: string, maxLength: number) => {
     if (str.length <= maxLength) {
       return str;
@@ -33,27 +29,19 @@ const BuyHere = ({
       <div className="w-full container relative flex pt-40 justify-center !h-[800px] max-lg:!h-[900px] pb-20 max-lg:pt-20 max-xs:pt-10">
         <div className="bg-[#D3C9FD] rounded-[50px] [box-shadow:_0px_9px_0px_0px_#000] h-fit flex flex-col gap-4 w-full max-w-[95%] py-10 items-center relative">
           <Image
-            src={'/static/images/landing/buy-here/duck.svg'}
+            src={'/static/images/landing/buy-here/duck.png'}
             alt="Duck"
             width={204}
             height={174}
             className="absolute -top-24 -right-12 max-lg:hidden"
           />
           <div
-            className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] text-center leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] ${
-              isDesktopLG
-                ? '[text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_6.07px]'
-                : '[text-shadow:_0px_2px_0px_#000] [-webkit-text-stroke-width:_2.07px]'
-            }`}
+            className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] text-center leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] lg:[text-shadow:_0px_6px_0px_#000] lg:[-webkit-text-stroke-width:_6.07px] [text-shadow:_0px_2px_0px_#000] [-webkit-text-stroke-width:_2.07px]`}
           >
             Buy Here!
           </div>
           <div
-            className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[48px] max-lg:text-[20px] text-center leading-none text-white tracking-[-4px] max-lg:tracking-[-1px] ${
-              isDesktopLG
-                ? '[text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-                : '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_0.87px]'
-            }`}
+            className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[48px] max-lg:text-[20px] text-center leading-none text-white tracking-[-4px] max-lg:tracking-[-1px] lg:[text-shadow:_0px_6px_0px_#000] lg:[-webkit-text-stroke-width:_3.07px] [text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_0.87px]`}
           >
             Token Contract
           </div>
@@ -90,6 +78,7 @@ const BuyHere = ({
                     height={20}
                     priority={true}
                     className={`h-[40px] w-auto`}
+                    unoptimized={true}
                   />
                 </div>
               </a>
@@ -111,6 +100,7 @@ const BuyHere = ({
                     height={20}
                     priority={true}
                     className="h-[40px] w-auto"
+                    unoptimized={true}
                   />
                 </div>
               </a>

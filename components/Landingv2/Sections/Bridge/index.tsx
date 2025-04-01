@@ -1,9 +1,5 @@
-'use client';
-import { useRef, useState, Fragment } from 'react';
 import Image from 'next/image';
 import { BRIDGES } from '@/components/Landingv2/Sections/Data';
-import { FooterLanding } from '@/components/layout/Footer';
-import useMediaQuery from '@/hooks/useMediaQuery';
 
 const Bridge = ({
   className = '',
@@ -12,7 +8,6 @@ const Bridge = ({
   className?: string;
   id?: string;
 }) => {
-  const isDesktopLG = useMediaQuery('(min-width: 1024px)');
   return (
     <div
       className={`w-full !h-[100%] ${className} relative bg-[#69b8e4]`}
@@ -21,8 +16,8 @@ const Bridge = ({
       <Image
         src={'/static/images/landing/bridge/background.png'}
         alt=""
-        layout="fill"
-        objectFit="cover"
+        fill
+        className="object-cover"
         quality={100}
         placeholder="blur"
         blurDataURL="/static/images/landing/bridge/background-blur.jpg"
@@ -30,11 +25,7 @@ const Bridge = ({
       <div className="flex items-center flex-col gap-3 w-full relative z-[1] h-[831px] max-lg:h-[1000px] container py-16">
         <div className="flex flex-col items-center gap-6 rounded-[50px] bg-[#1C3445] px-20 max-2xl:px-16 max-xl:px-10 max-lg:px-28 max-sm:px-10 max-xs:px-5 py-10 [box-shadow:_0px_9px_0px_0px_#000] w-[85%]">
           <div
-            className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] ${
-              isDesktopLG
-                ? '[text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_6.07px]'
-                : '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-            }`}
+            className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] lg:[text-shadow:_0px_6px_0px_#000] lg:[-webkit-text-stroke-width:_6.07px] [text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]`}
           >
             Bridge
           </div>

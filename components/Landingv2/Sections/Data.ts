@@ -1,35 +1,35 @@
 export const MAIN_BRANDS = [
   {
-    logo: '/static/images/landing/take-to-action/llama-swap-black.svg',
+    logo: '/static/images/landing/buy-here/llama-swap-black.png',
     url: 'https://swap.defillama.com',
   },
   {
-    logo: '/static/images/landing/take-to-action/linex-black.svg',
+    logo: '/static/images/landing/buy-here/linex-black.png',
     url: 'https://app.lynex.fi/swap?outputCurrency=0xe07C2bdbb8C787962C2C6e93C11a152110E7E4d2',
   },
   {
-    logo: '/static/images/landing/take-to-action/nile-black.svg',
+    logo: '/static/images/landing/buy-here/nile-black.png',
     url: 'https://www.thenile.exchange/swap',
   },
 ];
 export const BRANDS = [
   {
-    logo: '/static/images/landing/take-to-action/dexscreener-black.svg',
+    logo: '/static/images/landing/buy-here/dexscreener-black.png',
     url: 'https://dexscreener.com/linea/0xfb26fdeb0d7151731afccdffb0e38d2c5f33c807',
   },
   {
-    logo: '/static/images/landing/take-to-action/defined-black.svg',
+    logo: '/static/images/landing/buy-here/defined-black.png',
     url: 'https://www.defined.fi/linea/0xfb26fdeb0d7151731afccdffb0e38d2c5f33c807?quoteToken=token0&cache=a46c9',
   },
   {
-    logo: '/static/images/landing/take-to-action/dextools-black.svg',
+    logo: '/static/images/landing/buy-here/dextools-black.png',
     url: 'https://www.dextools.io/app/en/linea/pair-explorer/0xfb26fdeb0d7151731afccdffb0e38d2c5f33c807?t=1713546089382',
   },
 ];
 
 export const PENGMILIOS1 = [
   {
-    image: '/static/images/landing/meet/pengmilio-1.svg',
+    image: '/static/images/landing/meet/pengmilio-1.png',
     description:
       'Proud, vibrant, and ready to party, rocking the flag like a boss!',
     backgroundColor: 'bg-[#C7CDDC]',
@@ -37,7 +37,7 @@ export const PENGMILIOS1 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-2.svg',
+    image: '/static/images/landing/meet/pengmilio-2.png',
     description: 'All bones but still ready to party hard in the afterlife',
     backgroundColor: 'bg-[#94817E]',
     textColor: 'text-[#FFFFFF]',
@@ -46,7 +46,7 @@ export const PENGMILIOS1 = [
 ];
 export const PENGMILIOS2 = [
   {
-    image: '/static/images/landing/meet/pengmilio-3.svg',
+    image: '/static/images/landing/meet/pengmilio-3.png',
     description:
       'Forged in magma, here to set the dance floor on fire with volcanic energy',
     backgroundColor: 'bg-[#6EDD8D]',
@@ -54,7 +54,7 @@ export const PENGMILIOS2 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-4.svg',
+    image: '/static/images/landing/meet/pengmilio-4.png',
     description:
       'Half-dead, but always down for a zombie-style rave. Don’t fear the green!',
     backgroundColor: 'bg-[#4AB0EA]',
@@ -62,7 +62,7 @@ export const PENGMILIOS2 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-5.svg',
+    image: '/static/images/landing/meet/pengmilio-5.png',
     description:
       'Trippy colors, wild vibes this penguin is the king of every rave',
     backgroundColor: 'bg-[#1C3445]',
@@ -73,7 +73,7 @@ export const PENGMILIOS2 = [
 
 export const PENGMILIOS3 = [
   {
-    image: '/static/images/landing/meet/pengmilio-6.svg',
+    image: '/static/images/landing/meet/pengmilio-6.png',
     description:
       'The classic hero, smoking weed while saving the universe... his way',
     backgroundColor: 'bg-[#F16539]',
@@ -81,7 +81,7 @@ export const PENGMILIOS3 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-7.svg',
+    image: '/static/images/landing/meet/pengmilio-7.png',
     description:
       'Shining bright, the true party master and spiritual guide to an epic trip',
     backgroundColor: 'bg-[#1C3445]',
@@ -89,7 +89,7 @@ export const PENGMILIOS3 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-8.svg',
+    image: '/static/images/landing/meet/pengmilio-8.png',
     description:
       'Cold on the outside, but burning hot for a good time. Thawed out and ready to party',
     backgroundColor:
@@ -98,7 +98,7 @@ export const PENGMILIOS3 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-9.svg',
+    image: '/static/images/landing/meet/pengmilio-9.png',
     description:
       'Sensual curves and penguin charm. The star of any icy dance floor!',
     backgroundColor: 'bg-[#F6C64B]',
@@ -109,7 +109,7 @@ export const PENGMILIOS3 = [
 
 export const PENGMILIOS4 = [
   {
-    image: '/static/images/landing/meet/pengmilio-10.svg',
+    image: '/static/images/landing/meet/pengmilio-10.png',
     description:
       'Nothing to hide, just muscles and raw power. Sometimes, bare is better!',
     backgroundColor:
@@ -118,7 +118,7 @@ export const PENGMILIOS4 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-11.svg',
+    image: '/static/images/landing/meet/pengmilio-11.png',
     description:
       'From the future, always one step ahead for a next-level cyber bash',
     backgroundColor: 'bg-[#1F2024]',
@@ -126,7 +126,7 @@ export const PENGMILIOS4 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-12.svg',
+    image: '/static/images/landing/meet/pengmilio-12.png',
     description:
       "This penguin's skin brings a whole new level of unpredictable party chaos.",
     backgroundColor: 'bg-[#7D4AEA]',
@@ -136,7 +136,7 @@ export const PENGMILIOS4 = [
 ];
 export const PENGMILIOS5 = [
   {
-    image: '/static/images/landing/meet/pengmilio-13.svg',
+    image: '/static/images/landing/meet/pengmilio-13.png',
     description:
       'projecting itself to any party near you. Fun guaranteed from tomorrow!',
     backgroundColor: 'bg-[#C7CDDC]',
@@ -144,7 +144,7 @@ export const PENGMILIOS5 = [
     loaded: false,
   },
   {
-    image: '/static/images/landing/meet/pengmilio-14.svg',
+    image: '/static/images/landing/meet/pengmilio-14.png',
     description:
       'Retro bot with a wild party soul from the past. Mechanic but crazy',
     backgroundColor: 'bg-[#94817E]',

@@ -1,25 +1,16 @@
-'use client';
-import { useState } from 'react';
 import Image from 'next/image';
-import useMediaQuery from '@/hooks/useMediaQuery';
 import { menuLinksLanding } from '@/data/menuLinks';
 import { SOCIALS } from '@/components/Landingv2/Sections/Data';
+import InputFooter from './InputFooter';
 
 export const FooterLanding = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const isDesktopLG = useMediaQuery('(min-width: 1024px)');
-  const [value, setValue] = useState('');
   return (
     <footer className="flex flex-col w-[100%] mx-auto bg-[#211C1B] rounded-t-[100px] max-xs:rounded-t-[60px] z-[10] absolute -bottom-80 md:-bottom-40 lg:-bottom-80">
       <div className="mx-auto w-[90%] z-[10] mt-10 max-xxs:mt-14 max-w-[1820px] flex flex-col gap-10">
         <div className="flex lg:items-baseline md:justify-between max-lg:items-center lg:flex-row md:flex-row-reverse max-md:flex-col-reverse gap-5 w-full">
           <div className="flex flex-col items-start gap-5 max-md:w-full max-sm:max-w-[420px]">
             <div
-              className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] max-lg:hidden ${
-                isDesktopLG
-                  ? '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-                  : '[text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]'
-              }`}
+              className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] max-lg:hidden lg:[text-shadow:_0px_3px_0px_#000] lg:[-webkit-text-stroke-width:_3.07px] [text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]`}
             >
               Info
             </div>
@@ -38,11 +29,7 @@ export const FooterLanding = () => {
           <div className="flex flex-col items-start gap-16">
             <div className="flex flex-col items-start gap-5 max-lg:hidden">
               <div
-                className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] ${
-                  isDesktopLG
-                    ? '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-                    : '[text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]'
-                }`}
+                className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] lg:[text-shadow:_0px_3px_0px_#000] lg:[-webkit-text-stroke-width:_3.07px] [text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]`}
               >
                 Say What up
               </div>
@@ -52,41 +39,19 @@ export const FooterLanding = () => {
             </div>
             <div className="flex flex-col items-start gap-5 max-lg:hidden">
               <div
-                className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] ${
-                  isDesktopLG
-                    ? '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-                    : '[text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]'
-                }`}
+                className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] lg:[text-shadow:_0px_3px_0px_#000] lg:[-webkit-text-stroke-width:_3.07px] [text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]`}
               >
                 News & Updates
               </div>
               <div className="text-2xl max-2xl:text-lg font-medium text-white">
                 YOUR EMAIL ADDRESS
               </div>
-              <div className="relative w-full">
-                <input
-                  value={value}
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                    setValue(event.target.value);
-                  }}
-                  title="Email"
-                  type="email"
-                  className={`relative w-full bg-white rounded-lg [box-shadow:4px_4px_0px_0px_#000] py-1 pl-8 pr-2 text-sm font-normal focus:outline-1 focus:outline-picton-blue-400 focus:ring-1 transition-all`}
-                  placeholder={'Example@Something.com'}
-                  minLength={10}
-                  spellCheck="false"
-                />
-                <span className="icon-letter text-sm text-[#121212] absolute left-2 top-1/2 -translate-y-1/2"></span>
-              </div>
+              <InputFooter />
             </div>
           </div>
           <div className="flex flex-col items-center gap-5">
             <div
-              className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] text-center ${
-                isDesktopLG
-                  ? '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-                  : '[text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]'
-              }`}
+              className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[32px] max-2xl:text-[24px] leading-none text-white tracking-[-3px] max-2xl:tracking-[-1px] text-center lg:[text-shadow:_0px_3px_0px_#000] lg:[-webkit-text-stroke-width:_3.07px] [text-shadow:_0px_1px_0px_#000] [-webkit-text-stroke-width:_1.07px]`}
             >
               Follow us for more
             </div>
@@ -138,6 +103,7 @@ export const FooterLanding = () => {
                 height={14}
                 alt="Blast"
                 className="w-[82px]"
+                unoptimized={true}
               />
             </a>
           </div>

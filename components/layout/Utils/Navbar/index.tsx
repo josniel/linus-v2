@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 import { menuLinksLanding } from '@/data/menuLinks';
 
-import NavbarLinkLanding from '@/components/layout/Utils/NavbarLink';
 import { useRouter, usePathname } from 'next/navigation';
 
 export const NavbarLanding = ({ isFooter = false }: { isFooter?: boolean }) => {

@@ -1,7 +1,6 @@
 'use client';
-import { useRef, useState, Fragment, useMemo } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
-import Button from '@/components/UI/Button';
 import Card from './Card';
 
 const products = [

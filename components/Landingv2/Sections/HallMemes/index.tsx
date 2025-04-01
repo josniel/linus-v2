@@ -1,10 +1,9 @@
 'use client';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { MEMES } from '@/components/Landingv2/Sections/Data';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import SwipeableContainer from './SwipeableContainer';
-import MemesSkeleton from '@/components/Landingv2/Sections/HallMemes/MemesSkeleton';
 
 const HallMemes = ({
   className = '',
@@ -107,11 +106,7 @@ const HallMemes = ({
     <div className={`w-full relative bg-[#1C3445] ${className}`} id={id}>
       <div className="h-[1100px] max-xl:h-[900px] max-lg:h-[720px] max-xs:h-[430px] container flex items-center flex-col gap-7 py-16 max-xs:pt-10">
         <div
-          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] text-center ${
-            isDesktopLG
-              ? '[text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_6.07px]'
-              : '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-          }`}
+          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] text-center lg:[text-shadow:_0px_6px_0px_#000] lg:[-webkit-text-stroke-width:_6.07px] [text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]`}
         >
           Hall of Memes
         </div>
@@ -218,7 +213,7 @@ const HallMemes = ({
                   {!meme.loaded ? <div className="w-full h-full"></div> : null}
                 </SwipeableContainer>
                 <div
-                  className={`backdrop-blur-md absolute bottom-0 w-full flex flex-col gap-2 px-10 py-5 ${
+                  className={`backdrop-blur-md absolute bottom-0 w-full flex flex-col gap-2 max-xs:gap-0.5 px-10 max-xs:px-4 max-xs:py-2.5 py-5 ${
                     meme.loaded ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
@@ -256,7 +251,6 @@ const HallMemes = ({
             </div>
           ) : null}
         </div>
-        {/* <MemesSkeleton /> */}
       </div>
     </div>
   );

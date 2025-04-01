@@ -7,7 +7,6 @@ import { useAuth } from '@/context/AuthContext';
 
 export const HeaderLanding = ({ className = '' }: { className?: string }) => {
   const { isLoggedIn, logout } = useAuth();
-
   return (
     <header
       className="relative flex flex-col mx-auto w-[100%] z-[800] lg:h-[131px]"

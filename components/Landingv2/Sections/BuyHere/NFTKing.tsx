@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState, useMemo } from 'react';
 import Image from 'next/image';
 
@@ -89,7 +90,7 @@ const NFTKing = () => {
 
   return (
     <div
-      className="absolute bottom-0 -left-5 max-xl:-left-28 w-[435px] max-2xl:w-[348px] h-[607px] max-2xl:h-[485.6px] group max-md:hidden 2xl:[clip-path:polygon(0%_0%,_63.92%_0%,_100%_75.7%,_100%_100%,_0%_100%)] max-2xl:[clip-path:polygon(0%_0%,_68.92%_0%,_100%_75.7%,_100%_100%,_0%_100%)]"
+      className="absolute bottom-0 -left-5 max-xl:-left-28 w-[435px] max-2xl:w-[348px] h-[627px] max-2xl:h-[505.6px] group max-md:hidden 2xl:[clip-path:polygon(0%_0%,_75.92%_0%,_100%_75.7%,_100%_100%,_0%_100%)] max-2xl:[clip-path:polygon(0%_0%,_78.92%_0%,_100%_75.7%,_100%_100%,_0%_100%)]"
       ref={containerRef}
     >
       <Image
@@ -98,34 +99,34 @@ const NFTKing = () => {
         width={435}
         height={607}
         quality={100}
-        className={`absolute bottom-0 left-0 w-full h-full transition-all ${
+        className={`absolute bottom-0 left-0 transition-all ${
           allLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         onLoad={() => setNFTKingLoaded(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/eyes.svg'}
+        src={'/static/images/landing/buy-here/eyes.png'}
         alt="Eyes"
         width={435}
         height={590}
-        className={`absolute bottom-0 left-0 w-full h-[590px] max-2xl:h-[472px] group-hover:-translate-y-2 transition-all group-hover:scale-[1.02] ${
+        className={`absolute bottom-6 left-0 w-full h-[590px] max-2xl:h-[472px] max-2xl:bottom-3 group-hover:-translate-y-2 transition-all group-hover:scale-[1.02] ${
           allLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         ref={eyesRef}
         onLoad={() => setEyesLoaded(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/gold-teeth.svg'}
+        src={'/static/images/landing/buy-here/gold-teeth.png'}
         alt="Gold Teeth"
         width={435}
         height={607}
-        className={`absolute bottom-0 left-0 w-full h-full transition-all ${
+        className={`absolute bottom-3 max-2xl:bottom-0 left-0 w-full h-full transition-all ${
           allLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         onLoad={() => setGoldTeeth(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/chain.svg'}
+        src={'/static/images/landing/buy-here/chain.png'}
         alt="Chain"
         width={435}
         height={564}
@@ -136,11 +137,11 @@ const NFTKing = () => {
         onLoad={() => setChainLoaded(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/crown.svg'}
+        src={'/static/images/landing/buy-here/crown.png'}
         alt="Crown"
         width={495}
         height={657}
-        className={`absolute -bottom-4 left-9 w-[495px] max-2xl:w-[396px] group-hover:rotate-[-14deg] group-hover:-translate-y-6 scale-[1.03] transition-all ${
+        className={`absolute bottom-2 max-2xl:-bottom-1 left-9 w-[495px] max-2xl:w-[396px] group-hover:rotate-[-14deg] group-hover:-translate-y-6 scale-[1.03] max-2xl:scale-[1.06] transition-all ${
           allLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         ref={crownRef}

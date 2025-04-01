@@ -1,10 +1,8 @@
 'use client';
-import { useRef, useState, Fragment, useMemo } from 'react';
 import Image from 'next/image';
 import { Bebas_Neue } from 'next/font/google';
 import MiniBanner from '@/components/MiniBanner';
 import Button from '@/components/UI/Button';
-import useMediaQuery from '@/hooks/useMediaQuery';
 import { useCart } from '@/hooks/useCart';
 
 const bebasNeue = Bebas_Neue({
@@ -21,7 +19,6 @@ const Condoms = ({
   id?: string;
 }) => {
   const { addToCart } = useCart();
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const handleCartClick = async () => {
     // await addToCart(product, 1);
@@ -38,6 +35,7 @@ const Condoms = ({
         height={1422}
         quality={100}
         className="absolute top-0 left-0 w-full h-full object-cover object-center"
+        unoptimized={true}
       />
       <Image
         src={'/static/images/store/condoms/rocks.svg'}
@@ -45,6 +43,7 @@ const Condoms = ({
         width={227}
         height={197}
         className="absolute top-1/2 -translate-y-1/2 right-0 w-[140px]"
+        unoptimized={true}
       />
       <Image
         src={'/static/images/store/condoms/rocks2.svg'}
@@ -52,6 +51,7 @@ const Condoms = ({
         width={230}
         height={210}
         className="absolute bottom-2 left-[300px] w-[180px]"
+        unoptimized={true}
       />
       <Image
         src={'/static/images/store/condoms/planet.png'}
@@ -95,12 +95,8 @@ const Condoms = ({
           />
         </div>
         <div
-          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[32px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] lg:mt-28 text-center max-w-[95%] min-w-[300px] 
-          ${
-            isDesktop
-              ? '[text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_6.07px]'
-              : '[text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_4.07px]'
-          }`}
+          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[32px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] lg:mt-28 text-center max-w-[95%] min-w-[300px] lg:[text-shadow:_0px_6px_0px_#000] lg:[-webkit-text-stroke-width:_6.07px] [text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_4.07px]
+          `}
         >
           Limited Special edition
         </div>

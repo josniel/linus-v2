@@ -1,7 +1,4 @@
 import ComponentVisible from '@/hooks/useVisible';
-
-import MenuMobileSubMenu from '@/components/MenuMobile/MenuMobileSubMenu';
-
 import { Link } from '@/interfaces';
 
 const MenuMobileLink = ({ link }: { link: Link }) => {
@@ -21,10 +18,6 @@ const MenuMobileLink = ({ link }: { link: Link }) => {
       >
         <span>{link.name}</span>
       </a>
-
-      {link.subLinks && (
-        <MenuMobileSubMenu subLinks={link.subLinks} isVisible={isVisible} />
-      )}
     </div>
   );
 };

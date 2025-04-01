@@ -1,9 +1,4 @@
-'use client';
 import Image from 'next/image';
-import { TakeToActionDecorator } from '@/components/layout/BackgroundDecorator';
-import useMediaQuery from '@/hooks/useMediaQuery';
-import { useState, useEffect } from 'react';
-import Clipboard from 'clipboard';
 
 const Bridges = ({
   className = '',
@@ -12,7 +7,6 @@ const Bridges = ({
   className?: string;
   id?: string;
 }) => {
-  const isDesktopXL = useMediaQuery('(min-width: 1280px)');
   const brands = [
     {
       logo: '/static/images/footer/linea 2.svg',
@@ -32,27 +26,23 @@ const Bridges = ({
     },
   ];
 
-  const [showTooltip, setShowTooltip] = useState(false);
+  // const [showTooltip, setShowTooltip] = useState(false);
 
-  const handleCopyToClipboard = () => {
-    const textToCopy = '0xe07C2bdbb8C787962C2C6e93C11a152110E7E4d2';
+  // const handleCopyToClipboard = () => {
+  //   const textToCopy = '0xe07C2bdbb8C787962C2C6e93C11a152110E7E4d2';
 
-    navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => {
-        setShowTooltip(true);
-        setTimeout(() => {
-          setShowTooltip(false);
-        }, 2000);
-      })
-      .catch((err) => {
-        console.error('Error al copiar al portapapeles: ', err);
-      });
-  };
-
-  useEffect(() => {
-    new Clipboard('p');
-  }, []);
+  //   navigator.clipboard
+  //     .writeText(textToCopy)
+  //     .then(() => {
+  //       setShowTooltip(true);
+  //       setTimeout(() => {
+  //         setShowTooltip(false);
+  //       }, 2000);
+  //     })
+  //     .catch((err) => {
+  //       console.error('Error al copiar al portapapeles: ', err);
+  //     });
+  // };
 
   return (
     <div

@@ -1,12 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRef, useState, useEffect, useMemo } from 'react';
-import useMediaQuery from '@/hooks/useMediaQuery';
-import {
-  LiquidityBurnedDecorator,
-  LiquidityBurnedGradients,
-} from '@/components/layout/BackgroundDecorator';
-import Clipboard from 'clipboard';
+
 const LiquidityBurned = ({
   className = '',
   id,
@@ -17,8 +12,6 @@ const LiquidityBurned = ({
   const elonRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const isDesktopLG = useMediaQuery('(min-width: 1024px)');
-  const isMobileSM = useMediaQuery('(min-width: 640px)');
   const [showTooltip, setShowTooltip] = useState(false);
   const [NFTMuskLoaded, setNFTMuskLoaded] = useState(false);
   const [elonLoaded, setElonLoaded] = useState(false);
@@ -27,24 +20,20 @@ const LiquidityBurned = ({
     () => NFTMuskLoaded && elonLoaded,
     [NFTMuskLoaded, elonLoaded]
   );
-  const handleCopyToClipboard = () => {
-    const textToCopy = '0xe07C2bdbb8C787962C2C6e93C11a152110E7E4d2';
-    navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => {
-        setShowTooltip(true);
-        setTimeout(() => {
-          setShowTooltip(false);
-        }, 2000);
-      })
-      .catch((err) => {
-        console.error('Error al copiar al portapapeles: ', err);
-      });
-  };
-
-  useEffect(() => {
-    new Clipboard('p');
-  }, []);
+  // const handleCopyToClipboard = () => {
+  //   const textToCopy = '0xe07C2bdbb8C787962C2C6e93C11a152110E7E4d2';
+  //   navigator.clipboard
+  //     .writeText(textToCopy)
+  //     .then(() => {
+  //       setShowTooltip(true);
+  //       setTimeout(() => {
+  //         setShowTooltip(false);
+  //       }, 2000);
+  //     })
+  //     .catch((err) => {
+  //       console.error('Error al copiar al portapapeles: ', err);
+  //     });
+  // };
 
   const shortenString = (str: string, maxLength: number) => {
     if (str.length <= maxLength) {
@@ -117,20 +106,12 @@ const LiquidityBurned = ({
           className={`flex flex-col justify-center w-[100%] bg-[#111B4D] [box-shadow:_0px_9px_0px_0px_#000] rounded-[50px] px-[50px] lg:min-w-[360px] py-[35px] gap-5 max-lg:gap-0`}
         >
           <div
-            className={`__className_02ffdd text-white whitespace-nowrap text-[64px] font-normal leading-normal max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] [word-spacing:2px] ${
-              isDesktopLG
-                ? '[text-shadow:_0px_9px_0px_#000] [-webkit-text-stroke-width:_5.07px]'
-                : '[text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px]'
-            }`}
+            className={`__className_02ffdd text-white whitespace-nowrap text-[64px] font-normal leading-normal max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] [word-spacing:2px] lg:[text-shadow:_0px_9px_0px_#000] lg:[-webkit-text-stroke-width:_5.07px] [text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px]`}
           >
             Supply Burnt?
           </div>
           <div
-            className={`text-white whitespace-nowrap text-[48px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] [word-spacing:2px] ${
-              isDesktopLG
-                ? '[-webkit-text-stroke-width:_4.07px]'
-                : '[-webkit-text-stroke-width:_2.07px]'
-            }`}
+            className={`text-white whitespace-nowrap text-[48px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] [word-spacing:2px] lg:[-webkit-text-stroke-width:_4.07px] [-webkit-text-stroke-width:_2.07px]`}
           >
             Yes, 25%
           </div>
@@ -188,20 +169,12 @@ const LiquidityBurned = ({
             className={`flex flex-col justify-center w-[100%] bg-[#D3C9FD] [box-shadow:_0px_9px_0px_0px_#000] rounded-[50px] px-[50px] lg:min-w-[360px] py-[35px] gap-5 max-lg:gap-0`}
           >
             <div
-              className={`text-white whitespace-nowrap text-[64px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] ${
-                isDesktopLG
-                  ? '[text-shadow:_0px_9px_0px_#000] [-webkit-text-stroke-width:_5.07px]'
-                  : '[text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px]'
-              }`}
+              className={`text-white whitespace-nowrap text-[64px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] lg:[text-shadow:_0px_9px_0px_#000] lg:[-webkit-text-stroke-width:_5.07px] [text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px]`}
             >
               Liquidity?
             </div>
             <div
-              className={`text-white whitespace-nowrap text-[48px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] ${
-                isDesktopLG
-                  ? '[-webkit-text-stroke-width:_4.07px]'
-                  : '[-webkit-text-stroke-width:_2.07px]'
-              }`}
+              className={`text-white whitespace-nowrap text-[48px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] lg:[-webkit-text-stroke-width:_4.07px] [-webkit-text-stroke-width:_2.07px]`}
             >
               Burned!
             </div>
@@ -229,20 +202,12 @@ const LiquidityBurned = ({
             className={`flex flex-col justify-center w-[100%] bg-[#E6E2FD] [box-shadow:_0px_9px_0px_0px_#000] rounded-[50px] px-[50px] lg:min-w-[360px] py-[35px] gap-5 max-lg:gap-0`}
           >
             <div
-              className={`text-white whitespace-nowrap text-[64px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] ${
-                isDesktopLG
-                  ? '[text-shadow:_0px_9px_0px_#000] [-webkit-text-stroke-width:_5.07px]'
-                  : '[text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px]'
-              }`}
+              className={`text-white whitespace-nowrap text-[64px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] lg:[text-shadow:_0px_9px_0px_#000] lg:[-webkit-text-stroke-width:_5.07px] [text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px]`}
             >
               Fees?
             </div>
             <div
-              className={`text-white whitespace-nowrap text-[48px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] ${
-                isDesktopLG
-                  ? '[-webkit-text-stroke-width:_4.07px]'
-                  : '[-webkit-text-stroke-width:_2.07px]'
-              }`}
+              className={`text-white whitespace-nowrap text-[48px] font-normal leading-normal __className_02ffdd max-lg:text-[24px] [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] tracking-[-5px] max-lg:tracking-[-1px] lg:[-webkit-text-stroke-width:_4.07px] [-webkit-text-stroke-width:_2.07px]`}
             >
               None!
             </div>
@@ -283,7 +248,7 @@ const LiquidityBurned = ({
           }}
         />
         <Image
-          src={'/static/images/landing/liquidity-burned/elon.svg'}
+          src={'/static/images/landing/liquidity-burned/elon.png'}
           alt="Elon"
           width={474}
           height={604}

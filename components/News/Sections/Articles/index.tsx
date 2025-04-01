@@ -1,8 +1,6 @@
 'use client';
-import { useRef, useState, Fragment, useMemo, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { FooterLanding } from '@/components/layout/Footer';
-import useMediaQuery from '@/hooks/useMediaQuery';
 import { Article } from '@/components/News/Sections/Articles/types';
 
 const ARTICLES = [
@@ -35,7 +33,6 @@ const Articles = ({
   className?: string;
   id?: string;
 }) => {
-  const isDesktopLG = useMediaQuery('(min-width: 1024px)');
   const [articles, setArticles] = useState<string[]>([]);
   const [articlesInfo, setArticlesInfo] = useState<Article[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -82,8 +79,6 @@ const Articles = ({
     fetchArticlesInfo();
   }, [articles]);
 
-  console.log('articles', articles);
-
   return (
     <div
       className={`w-full relative bg-[#1C3445] mt-[400px] max-lg:pb-32 max-xxs:pb-40 pb-28 ${className}`}
@@ -108,11 +103,7 @@ const Articles = ({
               <div className="w-full flex items-baseline justify-between gap-2">
                 <div className="flex flex-col gap-1">
                   <div
-                    className={`text-[32px] leading-none tracking-[-1px] __className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-white w-full mt-3 max-lg:text-lg ${
-                      isDesktopLG
-                        ? '[-webkit-text-stroke-width:_2px]'
-                        : '[-webkit-text-stroke-width:_1px]'
-                    }`}
+                    className={`text-[32px] leading-none tracking-[-1px] __className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-white w-full mt-3 max-lg:text-lg lg:[-webkit-text-stroke-width:_2px] [-webkit-text-stroke-width:_1px]`}
                   >
                     {article.title}
                   </div>

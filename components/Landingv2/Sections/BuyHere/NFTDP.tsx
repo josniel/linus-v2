@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState, useMemo } from 'react';
 import Image from 'next/image';
 
@@ -124,7 +125,7 @@ const NFTDP = () => {
       ref={containerRef}
     >
       <Image
-        src={'/static/images/landing/buy-here/niggmilio.svg'}
+        src={'/static/images/landing/buy-here/niggmilio.png'}
         alt="Niggmilio"
         width={417}
         height={523}
@@ -134,7 +135,7 @@ const NFTDP = () => {
         onLoad={() => setNiggmilioLoaded(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/suit.svg'}
+        src={'/static/images/landing/buy-here/suit.png'}
         alt="Suit"
         width={417}
         height={523}
@@ -145,18 +146,18 @@ const NFTDP = () => {
         onLoad={() => setSuitLoaded(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/angry.svg'}
+        src={'/static/images/landing/buy-here/angry.png'}
         alt="Angry"
-        width={417}
+        width={224}
         height={523}
-        className={`absolute -bottom-3 right-8 w-full h-full group-hover:translate-x-1 transition-all ${
+        className={`absolute -bottom-3 right-[130px] max-2xl:-bottom-7 max-2xl:right-[98px] max-2xl:w-[190px] group-hover:translate-x-1 transition-all ${
           allLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         ref={angryRef}
         onLoad={() => setAngryLoaded(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/sniff.svg'}
+        src={'/static/images/landing/buy-here/sniff.png'}
         alt="Sniff"
         width={417}
         height={523}
@@ -167,7 +168,7 @@ const NFTDP = () => {
         onLoad={() => setSniffLoaded(true)}
       />
       <Image
-        src={'/static/images/landing/buy-here/music.svg'}
+        src={'/static/images/landing/buy-here/music.png'}
         alt="Music"
         width={417}
         height={523}
@@ -178,7 +179,7 @@ const NFTDP = () => {
       />
       <div className="absolute top-[133px] right-0 w-[266px] max-2xl:w-[212.8px] h-[217px] max-2xl:h-[173.6px]">
         <Image
-          src={'/static/images/landing/buy-here/smoke.svg'}
+          src={'/static/images/landing/buy-here/smoke.png'}
           alt="Smoke"
           width={149}
           height={120}
@@ -189,7 +190,7 @@ const NFTDP = () => {
           onLoad={() => setSmokeLoaded(true)}
         />
         <Image
-          src={'/static/images/landing/buy-here/flame.svg'}
+          src={'/static/images/landing/buy-here/flame.png'}
           alt="Flame"
           width={154}
           height={123}
@@ -200,7 +201,7 @@ const NFTDP = () => {
           onLoad={() => setFlameLoaded(true)}
         />
         <Image
-          src={'/static/images/landing/buy-here/joint.svg'}
+          src={'/static/images/landing/buy-here/joint.png'}
           alt="Joint"
           width={259}
           height={208}

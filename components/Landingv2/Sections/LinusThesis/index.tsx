@@ -1,7 +1,6 @@
 'use client';
-import { useRef, useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import useMediaQuery from '@/hooks/useMediaQuery';
 
 const LinusThesis = ({
   className = '',
@@ -10,7 +9,6 @@ const LinusThesis = ({
   className?: string;
   id?: string;
 }) => {
-  const isMobileXS = useMediaQuery('(max-width: 512px)');
   const [armLoaded, setArmLoaded] = useState(false);
   const [spaceLoaded, setSpaceLoaded] = useState(false);
   const [setupLoaded, setSetupLoaded] = useState(false);
@@ -19,25 +17,23 @@ const LinusThesis = ({
     () => armLoaded && spaceLoaded && setupLoaded,
     [armLoaded, spaceLoaded, setupLoaded]
   );
+  // console.log('calc :>> ', (1660 * 80) / 100);
+  // console.log('calc :>> ', (934 * 80) / 100);
 
   return (
     <div className={`w-full relative ${className} bg-[#2f5975]`} id={id}>
       <Image
         src={'/static/images/landing/the-linus-thesis/background.png'}
         alt=""
-        layout="fill"
-        objectFit="cover"
+        fill
+        className="object-cover"
         placeholder="blur"
         quality={100}
         blurDataURL="/static/images/landing/the-linus-thesis/background-blur.jpg"
       />
       <div className="w-full relative !h-[800px] max-xs:!h-[650px] container pt-20 max-xs:pt-16">
         <div
-          className={`text-white lg:hidden w-full text-center __className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px] [-webkit-text-stroke-color:_#000] max-xs:text-[24px] text-[48px] leading-none tracking-[-2px] [word-spacing:2px] max-w-[95%] ${
-            isMobileXS
-              ? '[text-shadow:_0px_4px_0px_#000] [-webkit-text-stroke-width:_2.07px]'
-              : '[text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-          }`}
+          className={`text-white lg:hidden w-full text-center __className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] max-xs:[text-shadow:_0px_4px_0px_#000] max-xs:[-webkit-text-stroke-width:_2.07px] [text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_3.07px] [-webkit-text-stroke-color:_#000] max-xs:text-[24px] text-[48px] leading-none tracking-[-2px] [word-spacing:2px] max-w-[95%]`}
         >
           A complete view <br /> to the Linus Thesis
         </div>
@@ -46,7 +42,9 @@ const LinusThesis = ({
           alt="Comments"
           width={860}
           height={297}
+          priority={true}
           className="absolute top-20 max-lg:top-48 max-xs:top-[130px] max-sm:top-[220px] max-w-[90%] lg:right-10 max-lg:left-1/2 max-lg:-translate-x-1/2 w-[750px] max-lg:w-[550px] max-xs:w-[350px] z-[5]"
+          unoptimized={true}
         ></Image>
         <a
           className="absolute -left-40 bottom-0 h-[702px] w-[1539.9px] max-2xl:w-[1231.92px] max-2xl:h-[561.6px] group cursor-pointer max-lg:hidden"
@@ -57,42 +55,45 @@ const LinusThesis = ({
         >
           <>
             <Image
-              src={'/static/images/landing/the-linus-thesis/setup.svg'}
+              src={'/static/images/landing/the-linus-thesis/setup.png'}
               alt="SetUp"
-              width={1711}
-              height={780}
-              className={`absolute left-0 bottom-0 w-full h-full z-[0] ${
+              width={1328}
+              height={747.2}
+              className={`absolute left-0 bottom-0 z-[0] ${
                 allLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               onLoad={(e) => {
                 setSetupLoaded(true);
               }}
+              quality={100}
             ></Image>
             <Image
-              src={'/static/images/landing/the-linus-thesis/arm.svg'}
+              src={'/static/images/landing/the-linus-thesis/arm.png'}
               alt="Arm"
-              width={1711}
-              height={780}
-              className={`absolute left-0 bottom-0 w-full h-full rotate-0 group-hover:rotate-[7deg] group-hover:translate-x-20 origin-top-left transition-all transform z-[1] ${
+              width={1328}
+              height={747.2}
+              className={`absolute left-0 bottom-0 rotate-0 group-hover:rotate-[7deg] group-hover:translate-x-20 origin-top-left transition-all transform z-[1] ${
                 allLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               onLoad={(e) => {
                 setArmLoaded(true);
               }}
+              quality={100}
             ></Image>
             <Image
               src={
-                '/static/images/landing/the-linus-thesis/space-pengmilio.svg'
+                '/static/images/landing/the-linus-thesis/space-pengmilio.webp'
               }
               alt="Space Pengmilio"
-              width={1711}
-              height={780}
-              className={`absolute left-0 bottom-0 w-full h-full z-[2] group-hover:translate-x-20 transition-all ${
+              width={1328}
+              height={747.2}
+              className={`absolute left-0 bottom-0 z-[2] group-hover:translate-x-20 transition-all ${
                 allLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               onLoad={(e) => {
                 setSpaceLoaded(true);
               }}
+              quality={100}
             ></Image>
           </>
           {!allLoaded ? (
@@ -124,10 +125,10 @@ const LinusThesis = ({
               '/static/images/landing/the-linus-thesis/setup-pengmilio-mobile.png'
             }
             alt="Setup Pengmilio"
-            width={789}
-            height={434}
+            width={808}
+            height={460}
             quality={100}
-            className="absolute left-0 bottom-0 w-full h-full z-[0]"
+            className="absolute left-0 bottom-0 z-[0]"
           ></Image>
         </a>
         <a

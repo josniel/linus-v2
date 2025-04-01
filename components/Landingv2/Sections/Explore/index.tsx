@@ -1,7 +1,5 @@
 'use client';
 import { useRef, useState, useEffect } from 'react';
-import Image from 'next/image';
-import useMediaQuery from '@/hooks/useMediaQuery';
 
 const Explore = ({
   className = '',
@@ -15,7 +13,6 @@ const Explore = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const isDesktopLG = useMediaQuery('(min-width: 1024px)');
 
   useEffect(() => {
     const video = videoRef.current;
@@ -107,11 +104,7 @@ const Explore = ({
     <div className={`w-full relative bg-[#D3C9FD] ${className}`} id={id}>
       <div className="w-full relative container flex items-center justify-center flex-col gap-7 py-20 !h-[900px]">
         <div
-          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] text-center max-lg:w-[85%] ${
-            isDesktopLG
-              ? '[text-shadow:_0px_6px_0px_#000] [-webkit-text-stroke-width:_6.07px]'
-              : '[text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]'
-          }`}
+          className={`__className_02ffdd [font-feature-settings:_'liga'_off,_'clig'_off] [-webkit-text-stroke-color:_#000] text-[64px] max-lg:text-[24px] leading-none text-white tracking-[-5px] max-lg:tracking-[-1px] text-center max-lg:w-[85%] lg:[text-shadow:_0px_6px_0px_#000] lg:[-webkit-text-stroke-width:_6.07px] [text-shadow:_0px_3px_0px_#000] [-webkit-text-stroke-width:_3.07px]`}
         >
           Explore the World of Linus
         </div>
@@ -122,13 +115,6 @@ const Explore = ({
           part of this incredible adventure!
         </div>
         <div className="border-[6px] rounded-[30px] border-black overflow-hidden w-[1000px] h-[685px] max-lg:w-[85%] relative max-lg:px-4 max-lg:pt-4 max-lg:pb-28 max-lg:bg-white flex items-center gap-4 flex-col group transition-all">
-          {/* <Image
-            src={'/static/images/landing/explore/explore.svg'}
-            alt="explore"
-            width={1285}
-            height={685}
-            className="w-full h-full object-cover object-center rounded-[30px]"
-          ></Image> */}
           <video
             className="w-full h-full rounded-[24px] object-cover object-top overflow-hidden"
             muted

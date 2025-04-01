@@ -9,6 +9,7 @@ const repeatedElements = Array(5).fill(
       className="w-[32px] h-[32px] max-md:w-[16px] max-md:h-[16px]"
       width={32}
       height={32}
+      unoptimized={true}
     />
     <div className="text-[#000] font-medium text-lg max-md:text-[8px] leading-normal whitespace-nowrap">
       Welcome to the home of pengmilio

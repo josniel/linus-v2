@@ -15,6 +15,7 @@ const CTAAlert = ({ openModal, setOpenModal }: CTAAlertProps) => {
           width={893}
           height={546}
           className="max-lg:hidden"
+          unoptimized={true}
         />
         <div className="bg-[#111B4D] lg:hidden rounded-[20px] w-[373px] h-[482px]"></div>
         <span

@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
   loadErrorMessages();
 }
 import '@/styles/globals.css';
-import { Bungee, Bebas_Neue, DynaPuff } from 'next/font/google';
+import { Bungee, DynaPuff } from 'next/font/google';
 import { HeaderLanding } from '@/components/layout/Header';
 import { FooterLanding } from '@/components/layout/Footer';
 import {
@@ -29,9 +29,6 @@ const dynaPuff = DynaPuff({
   subsets: ['latin'],
   display: 'swap',
 });
-
-// console.log('bungee.className :>> ', bungee.className);
-// console.log('dynaPuff.className :>> ', dynaPuff.className);
 
 const httpLink = createHttpLink({
   uri: 'https://zzrg6m-54.myshopify.com/api/2024-01/graphql.json',

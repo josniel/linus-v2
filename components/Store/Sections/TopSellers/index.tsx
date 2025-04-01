@@ -1,11 +1,8 @@
 'use client';
-import { useRef, useState, Fragment, useMemo, useEffect } from 'react';
-import Image from 'next/image';
-import Button from '@/components/UI/Button';
 import Card from './Card';
 import CardSkeleton from './CardSkeleton';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
+// import { useQuery, useMutation } from '@apollo/react-hooks';
+// import gql from 'graphql-tag';
 import { Product } from '@/components/Store/Sections/TopSellers/types';
 import { useTopSellers } from '@/hooks/useTopSellers';
 import { useCart } from '@/hooks/useCart';

@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 
-import { Button } from '@/components/UI'
-import useStore from '@/store'
-import { usePathname } from 'next/navigation'
+import { Button } from '@/components/UI';
+import useStore from '@/store';
+import { usePathname } from 'next/navigation';
 
 const AccountHandler = () => {
-  const isConnected = useStore((state) => state.isConnected)
+  const isConnected = useStore((state) => state.isConnected);
   // const { setWalletSelectionModal } = useStore()
 
-  const pathname = usePathname()
+  const pathname = usePathname();
   // const handlerConnectWallet = () => pathname !== '/' && setWalletSelectionModal(true)
 
   return (
@@ -31,10 +31,14 @@ const AccountHandler = () => {
               />
             </div>
             <div className="">
-              <p className="text-xs font-medium text-yellow-doge-500">Welcome</p>
+              <p className="text-xs font-medium text-yellow-doge-500">
+                Welcome
+              </p>
               <p className="flex items-center text-xs text-white">
                 <span className="block w-2 h-2 mr-1.5 bg-green-400 rounded-full"></span>
-                <span className="truncate max-w-[70px] lg:max-w-[150px]">0x98b36ab87c6de3c</span>
+                <span className="truncate max-w-[70px] lg:max-w-[150px]">
+                  0x98b36ab87c6de3c
+                </span>
               </p>
             </div>
           </div>
@@ -50,7 +54,7 @@ const AccountHandler = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AccountHandler
+export default AccountHandler;

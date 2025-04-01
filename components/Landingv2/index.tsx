@@ -1,22 +1,39 @@
-'use client';
-import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
 // Components
-import MainSection from '@/components/Landingv2/Sections/MainSection';
-import LiquidityBurned from '@/components/Landingv2/Sections/LiquidityBurned';
-import LinusThesis from '@/components/Landingv2/Sections/LinusThesis';
-import BuyHere from '@/components/Landingv2/Sections/BuyHere';
-import Explore from '@/components/Landingv2/Sections/Explore';
-import Meet from '@/components/Landingv2/Sections/Meet';
-import HallMemes from '@/components/Landingv2/Sections/HallMemes';
-import NewsShop from '@/components/Landingv2/Sections/NewsShop';
-import Bridge from '@/components/Landingv2/Sections/Bridge';
-import Banner from '@/components/Landingv2/Banners/CrackTheShell';
-// import Banner from '@/components/Landing/Banners/SoldOut';
-import CTAAlert from '@/components/Modals/CTAAlert';
+const MainSection = dynamic(
+  () => import('@/components/Landingv2/Sections/MainSection')
+);
+const LiquidityBurned = dynamic(
+  () => import('@/components/Landingv2/Sections/LiquidityBurned'),
+  { ssr: false }
+);
+const LinusThesis = dynamic(
+  () => import('@/components/Landingv2/Sections/LinusThesis')
+);
+const BuyHere = dynamic(
+  () => import('@/components/Landingv2/Sections/BuyHere'),
+  { ssr: false }
+);
+const Explore = dynamic(
+  () => import('@/components/Landingv2/Sections/Explore'),
+  { ssr: false }
+);
+const Meet = dynamic(() => import('@/components/Landingv2/Sections/Meet'));
+const HallMemes = dynamic(
+  () => import('@/components/Landingv2/Sections/HallMemes'),
+  { ssr: false }
+);
+const NewsShop = dynamic(
+  () => import('@/components/Landingv2/Sections/NewsShop')
+);
+const Bridge = dynamic(() => import('@/components/Landingv2/Sections/Bridge'));
+const Banner = dynamic(
+  () => import('@/components/Landingv2/Banners/CrackTheShell')
+);
+// const Banner = dynamic(() => import("@/components/Landing/Banners/SoldOut"));
 
 const Landing = () => {
-  const [openModal, setOpenModal] = useState(true);
-
   return (
     <>
       <MainSection id="section0" />
@@ -29,8 +46,6 @@ const Landing = () => {
       <HallMemes id="section5" className="" />
       <NewsShop id="section6" className="" />
       <Bridge id="bridge" className="" />
-
-      {/* <CTAAlert openModal={openModal} setOpenModal={setOpenModal} /> */}
     </>
   );
 };
